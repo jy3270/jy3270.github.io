@@ -27,8 +27,11 @@ filter(is_other == "yes") %>%
 mutate(total_count = sum(count))
 ```
 
+
 Column {data-width=650}
 -----------------------------------------------------------------------
+
+
 
 ### Chart A
 
@@ -62,7 +65,8 @@ Column {data-width=350}
 ```{r}
 boro_inspec %>%
   plot_ly(y = ~score, color = ~boro, type = "box") %>%
-  layout(title = "Inspection score by boroughs") 
+  layout(title = "Inspection score by boroughs",
+         xaxis = list(title = "Borough name")) 
 ```
 
 
@@ -76,7 +80,9 @@ rest_inspec %>%
   filter(n > 2000) %>%
   plot_ly(x = ~street, y = ~n,
           type = "bar") %>%
-  layout(title = 'Inspect results by streets with more than 2000 times violations')
+  layout(title = 'Inspect results by streets with more than 2000 times violations',
+         xaxis = list(title = "Street name"),
+         yaxis = list(title = "violations count"))
 
 ```
 
