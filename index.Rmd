@@ -14,3 +14,8 @@ Here's some text. I like the internet. I use [google](http://www.google.com/) al
 
 This is my virtual pet haonini, who is old but likes to dance.
 ![](images/haonini.jpg)
+
+# html align center
+<center>
+<img src="images/haonini.jpg" style="width:25%">
+</center>
