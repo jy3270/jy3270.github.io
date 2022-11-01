@@ -15,7 +15,14 @@ Here's some text. I like the internet. I use [google](http://www.google.com/) al
 This is my virtual pet haonini, who is old but likes to dance.
 ![](images/haonini.jpg)
 
-# html align center
+Here is a direct link to the about page: [about](about.html).
+
+I also made a bonus [extra page](extra_page.html).
+
+## New Section!
+
+[Here's](plotly.html) a page with plotly plots
+
 <center>
 <img src="images/haonini.jpg" style="width:25%">
 </center>
