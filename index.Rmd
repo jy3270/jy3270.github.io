@@ -5,24 +5,22 @@ output:
     toc: true
     toc_float: true
 ---
+### Introduction
 
-# This is Jingya's personal website
+Hi, my name is Jingya Yu. You can also call me Vivian. I am a passionate master student majoring in Biostatistics -- public health data science at Columbia Mailman School of Public health.
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+Here is a direct link to my academic and professional experience.[resume](resume.html)
 
-Here's some text. I like the internet. I use [google](http://www.google.com/) all the time to do data science.
+### Meet my pet!
 
 This is my virtual pet haonini, who is old but likes to dance.
-![](images/haonini.jpg)
-
-Here is a direct link to the about page: [about](about.html).
-
-I also made a bonus [extra page](extra_page.html).
-
-## New Section!
-
-[Here's](plotly.html) a page with plotly plots
 
 <center>
-<img src="images/haonini.jpg" style="width:25%">
+<img src="images/haonini.jpg" style="width:50%">
 </center>
+
+### Update 
+
+Now I am exploring drawing plot on my website and setting dashboard.
+
+
