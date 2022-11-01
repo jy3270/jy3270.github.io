@@ -80,9 +80,9 @@ rest_inspec %>%
   filter(n > 2000) %>%
   plot_ly(x = ~street, y = ~n,
           type = "bar") %>%
-  layout(title = 'Inspect results by streets with more than 2000 times violations',
+  layout(title = 'Inspect results by streets violations(>2000)',
          xaxis = list(title = "Street name"),
-         yaxis = list(title = "violations count"))
+         yaxis = list(title = "violations counts"))
 
 ```
 
