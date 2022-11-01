@@ -38,9 +38,11 @@ most_cuisine = cuisine_desc %>%
   add_row(cuisine_description = "other restaurant",
           count = sum(cuisine_other$count)) %>%
   select(cuisine_description, count)
+```
 
+```{r}
   plot_ly(most_cuisine, labels = ~cuisine_description, values = ~count, type = 'pie') %>%
-  layout(title = 'Cuisines with the most violations')
+  layout(title = 'Cuisines categories with violations')
 ```
 
 
@@ -61,7 +63,6 @@ Column {data-width=350}
 boro_inspec %>%
   plot_ly(y = ~score, color = ~boro, type = "box") %>%
   layout(title = "Inspection score by boroughs") 
-
 ```
 
 
