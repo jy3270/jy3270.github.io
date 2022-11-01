@@ -1,0 +1,16 @@
+---
+title: "Jingya Yu's Personal website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Jingya's personal website
+
+![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
+Here's some text. I like the internet. I use [google](http://www.google.com/) all the time to do data science.
+
+This is my virtual pet haonini, who is old but likes to dance.
+![](images/haonini.jpg)
