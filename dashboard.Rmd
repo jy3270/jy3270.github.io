@@ -100,7 +100,7 @@ rest_inspec %>%
     type = "scatter", mode = "markers", colors = "viridis"
   ) %>%
   layout(title = 'Scores spreading according to cuisine types in Manhattan',
-         xaxis = list(title = "Cuisine descriptions"),
+         xaxis = list(title = "Cuisine descriptions", tickangle = 35),
          yaxis = list(title = "Score"))
 ```
 
