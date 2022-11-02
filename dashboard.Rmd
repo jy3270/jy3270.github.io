@@ -40,12 +40,20 @@ most_cuisine = cuisine_desc %>%
   filter(is_other == "no") %>%
   add_row(cuisine_description = "other restaurant",
           count = sum(cuisine_other$count)) %>%
+    mutate(cuisine_description = fct_reorder(cuisine_description, count),
+           cuisine_description = fct_recode(
+      cuisine_description, 
+      "Latin" = "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+      "Juice" = "Juice, Smoothies, Fruit Salads" ,
+      "Mixed Buffet" = "Sandwiches/Salads/Mixed Buffet" ,
+      "Beverages" = "Bottled beverages, including water, sodas, juices, etc.")) %>%
   select(cuisine_description, count)
 ```
 
 ```{r}
-  plot_ly(most_cuisine, labels = ~cuisine_description, values = ~count, type = 'pie') %>%
-  layout(title = 'Cuisines categories with violations')
+  plot_ly(most_cuisine, x = ~cuisine_description, y = ~count, type = 'bar') %>%
+  layout(title = 'Violation times regarding cuisines categories',
+         xaxis = list(title = "Cusion Description")) 
 ```
 
 
@@ -72,17 +80,28 @@ boro_inspec %>%
 
 ### Chart C
 ```{r}
-rest_inspec %>% 
-   filter(boro %in% c("MANHATTAN", "BRONX", "BROOKLYN", "QUEENS", "STATEN ISLAND")) %>% 
-  count(street) %>%
-  mutate(street = fct_reorder(street, n)) %>%
-  arrange(desc(n)) %>%
-  filter(n > 2000) %>%
-  plot_ly(x = ~street, y = ~n,
-          type = "bar") %>%
-  layout(title = 'Inspect results by streets violations(>2000)',
-         xaxis = list(title = "Street name"),
-         yaxis = list(title = "violations counts"))
-
+rest_inspec %>%
+  filter(grade %in% c("A","B","C"), boro == "MANHATTAN") %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description,score)) %>%
+  mutate(
+    cuisine_description = as.factor(cuisine_description),
+    cuisine_description = fct_recode(
+      cuisine_description, 
+      "Latin" = "Latin (Cuban, Dominican, Puerto Rican, South & Central American)",
+      "Juice" = "Juice, Smoothies, Fruit Salads" ,
+      "Mixed Buffet" = "Sandwiches/Salads/Mixed Buffet" ,
+      "Beverages" = "Bottled beverages, including water, sodas, juices, etc.")) %>%
+    mutate(
+    text_label = str_c("grade: ", grade)
+  ) %>%
+  plot_ly(
+    x = ~cuisine_description, y = ~score, 
+    color = ~grade , alpha = 0.5,
+    type = "scatter", mode = "markers", colors = "viridis"
+  ) %>%
+  layout(title = 'Scores spreading according to cuisine types in Manhattan',
+         xaxis = list(title = "Cuisine descriptions"),
+         yaxis = list(title = "Score"))
 ```
+
 
